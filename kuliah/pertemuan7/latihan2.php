@@ -2,6 +2,13 @@
 // Salsabila Febrianty NP
 // 203040104
 // GET & POST
+
+// cek apakah tidak ada data di $_GET
+    if( !isset($_GET["nama"]) || !isset($_GET["npm"]) || !isset($_GET["prodi"]) || !isset($_GET["email"]) || !isset($_GET["img"]) ) {
+        // redirect
+        header("Location: latihan1.php");
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -13,11 +20,16 @@
     <title>Detail Mahasiswa</title>
 </head>
 <body>
+    <h1>Detail Mahasiswa</h1>
     <ul>
-        <li><?= $mhs["npm"]; ?></li>
-        <li><?= $mhs["nama"]; ?></li>
-        <li><?= $mhs["prodi"]; ?></li>
-        <li><?= $mhs["email"]; ?></li>
+        <img src="img/<?= $_GET["img"]; ?>" width="100px">
+        <li><?= $_GET["npm"]; ?></li>
+        <li><?= $_GET["nama"]; ?></li>
+        <li><?= $_GET["prodi"]; ?></li>
+        <li><?= $_GET["email"]; ?></li>
     </ul>
+
+    <a href="latihan1.php">Kembali ke Daftar Mahasiswa</a>
+
 </body>
 </html>

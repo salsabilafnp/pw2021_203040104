@@ -15,6 +15,7 @@
 
 // Superglobals = variable global milik PHP, Array Associative
 // $_GET dan $_POST = ada isinya tapi kosong
+// $_GET dikirim melalui URL
 // $_GET cara input data lewat program
     //$_GET["nama"] = "Salsabila Febrianty NP";
     //$_GET["npm"] = "203040104";
@@ -25,22 +26,33 @@
 
 // Studi Kasus
 $mahasiswa = [
-    ["nama" => "Salsabila FNP",
-    "npm" => "203040104", 
-    "prodi" => "Teknik Informatika",
-    "email" => "salsabilafebriantynp@gmail.com"],
-    ["nama" => "Fadila C",
-    "npm" => "182010025",
-    "prodi" => "Pendidikan Bahasa Sunda",
-    "email" => "fadilachoi@gmail.com"],
-    ["nama" => "Neng Santi M",
-    "npm" => "181030013",
-    "prodi" => "Keperawatan",
-    "email" => "nengsantim@gmail.com"],
-    ["nama" => "Annisa RT",
-    "npm" => "184040115",
-    "prodi" => "Ekonomi Pembangunan",
-    "email" => "regitatriar@gmail.com"]
+    [
+        "img" => "salsabila.jpg",
+        "nama" => "Salsabila FNP",
+        "npm" => "203040104", 
+        "prodi" => "Teknik Informatika",
+        "email" => "salsabilafebriantynp@gmail.com"
+    ],
+    [
+        "img" => "fadila.jpg",
+        "nama" => "Fadila C",
+        "npm" => "182010025",
+        "prodi" => "Pendidikan Bahasa Sunda",
+        "email" => "fadilachoi@gmail.com"],
+    [
+        "img" => "santi.jpg",
+        "nama" => "Neng Santi M",
+        "npm" => "181030013",
+        "prodi" => "Keperawatan",
+        "email" => "nengsantim@gmail.com"
+    ],
+    [
+        "img" => "annisa.jpg",
+        "nama" => "Annisa RT",
+        "npm" => "184040115",
+        "prodi" => "Ekonomi Pembangunan",
+        "email" => "regitatriar@gmail.com"
+    ]
 ];
 
 //$_GET["Nama"] = "Salsabila Febrianty";
@@ -65,11 +77,15 @@ $mahasiswa = [
     <title>GET</title>
 </head>
 <body>
+
     <h1>Daftar Mahasiswa</h1>
     <ul>
     <?php foreach($mahasiswa as $mhs) : ?>
-        <li><a href="latihan2.php?nama=<?= $mhs["nama"]; ?>"><?= ["nama"]; ?></a></li>
+        <li>
+            <a href="latihan2.php?nama=<?= $mhs["nama"]; ?>&npm=<?= $mhs["npm"];?>&prodi=<?= $mhs["prodi"];?>&email=<?= $mhs["email"];?>&img=<?= $mhs["img"];?>"><?= $mhs["nama"]; ?></a>
+        </li>
     <?php endforeach; ?>
     </ul>
+
 </body>
 </html>
