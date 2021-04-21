@@ -1,0 +1,23 @@
+/* Index */
+.name a {
+    text-decoration: none;
+    color: black;
+}
+
+.name a:hover { color: rgb(100, 100, 100); }
+
+.pict img { width: 250px; }
+
+.back-btn a {
+    text-decoration: none;
+    color: blue;
+}
+
+.back-btn:hover a { color: black; }
+
+a { text-decoration: none; }
+
+/* Admin */
+.add a{ color: rgb(0, 68, 255); }
+
+.add button a:hover{ color: white; }
