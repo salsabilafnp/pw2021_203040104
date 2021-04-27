@@ -2,7 +2,7 @@
 // Salsabila Febrianty NP
 // 203040104
 // Kamis08
-// Modul04 - MySQL
+// Modul05 - CRUD
 
 // Koneksi ke database
 function koneksi() {
@@ -33,7 +33,7 @@ function tambah($data) {
     $category = htmlspecialchars($data['category']);
     $picture = htmlspecialchars($data['picture']);
 
-    $query = "INSERT INTO mahasiswa VALUES ('', 'picture', 'name', 'description', 'price', 'category')";
+    $query = "INSERT INTO shoes VALUES ('', 'picture', 'name', 'description', 'price', 'category')";
 
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);

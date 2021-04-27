@@ -10,14 +10,13 @@ require 'php/functions.php';
 // Melakukan Query
 $shoes = query("SELECT * FROM shoes");
 
-// Melakukan pencarian
-if (isset($_GET['cari'])) {
-    $keyword = $_GET['keyword'];
-    $shoes = query("SELECT * FROM shoes WHERE
-            name LIKE '%$keyword%' OR price LIKE '%$keyword%' OR description LIKE '%$keyword%' OR category LIKE '%$keyword%' ");
+if (isset($_GET["cari"])) {
+    $keyword = $_GET["keyword"];
+    $shoes = query("SELECT * FROM shoes WHERE name LIKE '%$keyword%'");
 } else {
     $shoes = query("SELECT * FROM shoes");
 }
+
 ?>
 
 <!doctype html>
@@ -34,20 +33,30 @@ if (isset($_GET['cari'])) {
 <title>Cheval's Store</title>
 </head>
 <body>
-<?php if (empty($shoes)) : ?>
-    <tr>
-        <td colspan="7">
-            <h1>Data tidak ditemukan</h1>
-        </td>
-    </tr>
-<?php endif; ?>
 
-<form action="" method="get">
-    <input type="text" name="keyword" autofocus>
-    <button type="submit" name="cari">Cari</button>
-</form>
+<div class="container my-5">
+    <h2 class="mx-5 my-5">Cheval's List</h2>
 
-<h2 class="mx-5 my-5">Cheval's List</h2>
+    <!-- button action -->
+    <div class="admin mb-4 float-sm-end">
+        <a href="php/admin.php">
+            <button type="button" class="btn btn-outline-warning">Admin Page</button>
+        </a>
+    </div>
+    <!-- Searching -->
+    <form action="" method="get">
+        <input type="text" name="keyword" autofocus>
+        <button type="submit" name="cari" class="btn btn-outline-secondary">Search</button>
+    </form>
+
+    <!-- Tampilan Pencarian -->
+    <?php if (empty($shoes)) : ?>
+        <tr>
+            <td colspan="7">
+                <h1>Data tidak ditemukan</h1>
+            </td>
+        </tr>
+    <?php endif; ?>
 
 <!-- List of data -->
 <div class="container my-5">

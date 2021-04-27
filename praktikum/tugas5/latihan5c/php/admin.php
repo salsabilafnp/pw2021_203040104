@@ -45,7 +45,7 @@ $shoes = query("SELECT * FROM shoes");
                 <td><?= $no; ?></td>
                 <td style="width: 125px" class="text-center">
                     <a href=""><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-                    <a href="hapus.php?id_barang=<?= $shoes['id_barang']; ?>" onclick="return confirm('Delete This?')">
+                    <a href="hapus.php?id_barang=<?= $shoe['id_barang']; ?>" onclick="return confirm('Delete This?')">
                         <button type="button" class="delete btn btn-danger btn-sm">Delete</button>
                     </a>
                 </td>

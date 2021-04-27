@@ -2,7 +2,7 @@
 // Salsabila Febrianty NP
 // 203040104
 // Kamis08
-// Modul04 - MySQL
+// Modul05 - CRUD
 
 // Koneksi ke database
 function koneksi() {

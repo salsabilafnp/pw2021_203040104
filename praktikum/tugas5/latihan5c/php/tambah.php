@@ -1,7 +1,7 @@
 <?php 
 require 'functions.php';
 
-if (isset($_POST['tambah'])) {
+if (isset($_POST["tambah"])) {
     if (tambah($_POST) > 0) {
         echo "<script>
                     alert('Data Berhasil ditambahkan!');
@@ -37,11 +37,11 @@ if (isset($_POST['tambah'])) {
                     </ol>
                     <ol class="mb-4">
                         <label for="description">Description:</label>
-                        <input type="text" type="description" name="description" id="description" required>
+                        <input type="text" name="description" id="description" required>
                     </ol>
                     <ol class="mb-4">
                         <label for="price">Price: </label>
-                        <input type="text" type="price" name="price" id="price" required>
+                        <input type="text" name="price" id="price" required>
                     </ol>
                     <ol class="mb-4">
                         <label for="picture">Picture: </label>

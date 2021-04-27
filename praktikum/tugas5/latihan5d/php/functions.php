@@ -2,7 +2,7 @@
 // Salsabila Febrianty NP
 // 203040104
 // Kamis08
-// Modul04 - MySQL
+// Modul05 - CRUD
 
 // Koneksi ke database
 function koneksi() {
@@ -40,9 +40,9 @@ function tambah($data) {
 }
 
 // Fungsi untuk menghapus data didalam database
-function hapus($id_barang) {
+function hapus($id) {
     $conn = koneksi();
-    mysqli_query($conn, "DELETE FROM shoes WHERE id_barang = $id_barang");
+    mysqli_query($conn, "DELETE FROM shoes WHERE id_barang = $id");
 
     return mysqli_affected_rows($conn);
 }

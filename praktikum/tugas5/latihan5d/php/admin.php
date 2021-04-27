@@ -33,7 +33,8 @@ $shoes = query("SELECT * FROM shoes");
                 <th scope="col">No.</th>
                 <th scope="col">Opsi</th>
                 <th scope="col">Picture</th>
-                <th scope="col">Name</th>                    <th scope="col">Description</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
                 <th scope="col">Price</th>
                 <th scope="col">Category</th>
             </tr>
@@ -44,10 +45,10 @@ $shoes = query("SELECT * FROM shoes");
             <?php foreach ($shoes as $shoe) : ?>
                 <td><?= $no; ?></td>
                 <td style="width: 125px" class="text-center">
-                    <a href="ubah.php?id=<?= $shoes['id_barang']; ?>">
+                    <a href="ubah.php?id_barang=<?= $shoe['id_barang']; ?>">
                         <button type="button" class="btn btn-primary btn-sm">Edit</button>
                     </a>
-                    <a href="hapus.php?id=<?= $shoes['id_barang']; ?>" onclick="return confirm('Delete This?')">
+                    <a href="hapus.php?id_barang=<?= $shoe['id_barang']; ?>" onclick="return confirm('Delete This?')">
                         <button type="button" class="delete btn btn-danger btn-sm">Delete</button>
                     </a>
                 </td>

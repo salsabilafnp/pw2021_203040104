@@ -1,8 +1,8 @@
 <?php 
 require 'functions.php';
 
-$id = $_GET['id'];
-$shoes = query("SELECT * FROM shoes WHERE id = $id")[0];
+$id = $_GET["id_barang"];
+$shoes = query("SELECT * FROM shoes WHERE id_barang = $id")[0];
 
 if (isset($_POST['ubah'])) {
     if (ubah($_POST) > 0) {
