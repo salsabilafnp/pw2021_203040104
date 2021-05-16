@@ -85,11 +85,13 @@ $sepatu = [
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 
 <title>Cheval's Store</title>
 </head>
 <body>
+    <a class="btn btn-danger m-4" href="index.html">Go to Index Page</a>
+
     <div class="container mt-5 mb-5 text-center">
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -117,6 +119,7 @@ $sepatu = [
                     <?php endforeach; ?>
                 </tr>
             </tbody>
+        </table>
     </div>
 </body>
 </table>

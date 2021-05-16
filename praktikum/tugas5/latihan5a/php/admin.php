@@ -13,18 +13,25 @@ $shoes = query("SELECT * FROM shoes");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
     <title>Cheval's - Admin Page</title>
 </head>
 <body>
 <div class="container mt-5 mb-5 text-center">
+    <a class="btn btn-danger mb-4" href="../../index.html">Go to Index Page</a>
+
     <table class="table table-sm align-middle table-bordered table-striped table-hover">
         <thead>
             <tr>
                 <th scope="col">No.</th>
                 <th scope="col">Opsi</th>
                 <th scope="col">Picture</th>
-                <th scope="col">Name</th>                    <th scope="col">Description</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
                 <th scope="col">Price</th>
                 <th scope="col">Category</th>
             </tr>

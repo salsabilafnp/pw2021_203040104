@@ -1,0 +1,14 @@
+section {
+    min-height: 400px;
+    padding-top: 50px;
+}
+
+nav {
+    background-color: #082f69;
+}
+
+#kuliah, #praktikum, #tubes {
+    max-height: 450px;
+    padding-top: 75px;
+    margin-top: 25px;
+}

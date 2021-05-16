@@ -22,5 +22,8 @@
             </tr>        
         <?php endfor; ?>
     </table>
+    
+    <br>
+    <a class="btn btn-danger" href="index.html">Go to Index Page</a>
 </body>
 </html>

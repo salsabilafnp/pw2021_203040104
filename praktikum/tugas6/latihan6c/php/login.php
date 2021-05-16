@@ -5,7 +5,7 @@ require 'functions.php';
 // cek cookie
 if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])) {
     $username = $_COOKIE['username'];
-    $password = $_COOKIE['password'];
+    $hash = $_COOKIE['hash'];
 
     // ambil username berdasarkan id
     $result = mysqli_query(koneksi(), "SELECT * FROM user WHERE username = '$username'");
@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['hash'] = hash('sha256', $row['id'], false);
 
-            // jika remember me dicentang
+            //jika remember me dicentang
             if (isset($_POST['remember'])) {
                 setcookie('username', $row['username'], time() + 60*60*24);
                 $hash = hash('sha256', $row['id']);
@@ -65,9 +65,9 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
     <!-- My CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
     <title>Login</title>
 </head>
 <body>

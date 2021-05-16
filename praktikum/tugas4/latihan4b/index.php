@@ -17,15 +17,16 @@ $shoes = query("SELECT * FROM shoes");
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
 <title>Cheval's Store</title>
 </head>
 <body>
 
 <!-- Database -->
 <div class="container my-5 text-center">
+    <a class="btn btn-danger mb-4" href="../index.html">Go to Index Page</a>
+    
     <table class="table table-sm">
         <div class="table-responsive-sm">
             <table class="table table-hover">

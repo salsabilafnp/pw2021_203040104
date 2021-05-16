@@ -18,23 +18,28 @@ if (isset($_GET["cari"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
     <title>Cheval's - Admin Page</title>
 </head>
 <body>
 <div class="container mt-5 mb-5">
+    <a class="btn btn-danger mb-4" href="../../index.html">Go to Index Page</a>
+
+    <!-- Searching -->
+    <form action="" method="get">
+        <input type="text" name="keyword" autofocus>
+        <button type="submit" name="cari" class="btn btn-outline-secondary">Search</button>
+    </form>
+
     <!-- button action -->
     <div class="add mb-4 float-sm-end">
         <a href="tambah.php">
             <button type="button" class="btn btn-outline-primary">Add Item</button>
         </a>
     </div>
-    <!-- Searching -->
-    <form action="" method="get">
-        <input type="text" name="keyword" autofocus>
-        <button type="submit" name="cari" class="btn btn-outline-secondary">Search</button>
-    </form>
 
     <!-- Tampilan Pencarian -->
     <?php if (empty($shoes)) : ?>

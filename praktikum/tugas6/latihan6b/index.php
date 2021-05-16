@@ -26,9 +26,9 @@ if (isset($_GET["cari"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 
 <title>Cheval's Store</title>
 </head>
@@ -69,6 +69,8 @@ if (isset($_GET["cari"])) {
         </h5>
     <?php endforeach; ?>
 </div>
+
+<a class="btn btn-danger" href="../index.html">Go to Index Page</a>
 
 </body>
 </html>

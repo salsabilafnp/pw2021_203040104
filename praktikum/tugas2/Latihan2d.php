@@ -28,6 +28,7 @@ function hitungDeterminan($a, $b, $c, $d) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <title>Latihan 2D - 203040104</title>
     <style>
         .border {
@@ -38,8 +39,12 @@ function hitungDeterminan($a, $b, $c, $d) {
     </style>
 </head>
 <body>
-    <div class="border">
-        <?php hitungDeterminan(1,2,3,4); ?>
+    <div class="container my-3">
+        <div class="border">
+            <?php hitungDeterminan(1,2,3,4); ?>
+        </div>
+    <br>
+    <a class="btn btn-danger" href="index.html">Go to Index Page</a>
     </div>
 </body>
 </html>

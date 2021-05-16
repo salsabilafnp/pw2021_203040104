@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <title>Latihan 2A - 203040104</title>
     <style>
     .style1 {
@@ -30,11 +31,17 @@
     </style>
 </head>
 <body>
+
+    <div class="container my-3">
     <?php
         function gantiStyle($tulisan, $style1 = "style1", $style2 = "style2"){
             return "<div class=$style2><p class=$style1>$tulisan</p></div>";
         }
         echo gantiStyle("Selamat datang di praktikum PW");
     ?>
+    <br>
+    <a class="btn btn-danger" href="index.html">Go to Index Page</a>
+    </div>
+
 </body>
 </html>

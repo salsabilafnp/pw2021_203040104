@@ -22,6 +22,7 @@ function soal($style) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latihan 2B - 203040104</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <style>
         .border {
             border: 2px solid black;
@@ -30,6 +31,10 @@ function soal($style) {
     </style>
 </head>
 <body>
-    <?= soal("border"); ?>
+    <div class="container my-3">
+        <?= soal("border"); ?>
+        <br>
+        <a class="btn btn-danger" href="index.html">Go to Index Page</a>
+    </div>
 </body>
 </html>
