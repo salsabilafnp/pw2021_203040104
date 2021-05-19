@@ -14,7 +14,6 @@ if (isset($_POST["register"])) {
             </script>";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -39,22 +38,19 @@ if (isset($_POST["register"])) {
                 <div class="card-body">
                     <h4 class="card-title text-center">Registrasi</h4>
                     <form action="" method="post">
-                    <?php if(isset($error)) : ?>
-                        <p class="text-danger">Username atau Password Salah!</p>
-                    <?php endif; ?>
                         <div class="mb-3">
                             <label for="username" class="col-form-label">Username</label>
-                            <input type="text" class="form-control" name="username" placeholder="Write Your Username">
+                            <input type="text" class="form-control" name="username" placeholder="Write Your Username"  required>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="col-form-label">Password</label>
-                            <input type="password" class="form-control" name="password" placeholder="Write Your Password">
+                            <input type="password" class="form-control" name="password" placeholder="Write Your Password"  required>
                         </div>
                         <button type="submit" name="register" class="btn btn-primary">Register</button>
                         <a href="../index.php" class="mx-3 text-secondary">Back</a>
                     </form>
                     <!-- Login -->
-                    <p class="card-text text-center  mt-3">Sudah memiliki akun? Login <a href="login.php" class="text-decoration-none">disini</a></p>
+                    <p class="card-text text-center  mt-3">Sudah memiliki akun? Login <a href="../php/login.php" class="text-decoration-none">disini</a></p>
                 </div>
             </div>
         </div>

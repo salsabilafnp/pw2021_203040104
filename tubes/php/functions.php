@@ -1,9 +1,4 @@
 <?php
-// Salsabila Febrianty NP
-// 203040104
-// Kamis08
-// Modul06
-
 // Koneksi ke database
 function koneksi() {
     $conn = mysqli_connect("localhost", "root", "");

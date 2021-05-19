@@ -98,7 +98,7 @@ if (isset($_POST['submit'])) {
                         <a href="../index.php" class="mx-3 text-secondary">Back</a>
                     </form>
                     <!-- Registrasi -->
-                    <p class="card-text text-center  mt-3">Belum memiliki akun? Registrasi <a href="registrasi.php" class="text-decoration-none">disini</a></p>
+                    <p class="card-text text-center mt-3">Belum memiliki akun? Registrasi <a href="../php/registrasi.php" class="text-decoration-none">disini</a></p>
                 </div>
             </div>
         </div>
