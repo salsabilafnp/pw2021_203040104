@@ -1,6 +1,6 @@
 <?php
 // koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "phpdasar");
+$conn = mysqli_connect("localhost", "root", "", "pw_203040104");
 
 // query
 function query($query) {
@@ -12,5 +12,3 @@ function query($query) {
     }
     return $rows;
 }
-
-?>

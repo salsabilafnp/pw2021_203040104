@@ -1,6 +1,6 @@
 <?php
 // koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "phpdasar");
+$conn = mysqli_connect("localhost", "root", "", "pw_203040104");
 
 // ambil data dari tabel mahasiswa atau query data mahasiswa
 $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
@@ -19,12 +19,14 @@ $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Admin</title>
 </head>
+
 <body>
     <h1>Daftar Mahasiswa</h1>
 
@@ -39,20 +41,21 @@ $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
             <th>Jurusan</th>
         </thead>
         <?php $i = 1; ?>
-        <?php while($row = mysqli_fetch_assoc($result)) : ?>
-        <tbody>
-            <th><?= $i; ?></th>
-            <th>
-                <a href="">ubah</a> | <a href="">hapus</a>
-            </th>
-            <th><img src="img/<?= $row["gambar"]?>" width="50px"></th>
-            <th><?= $row["nrp"]?></th>
-            <th><?= $row["nama"]?></th>
-            <th><?= $row["email"]?></th>
-            <th><?= $row["jurusan"]?></th>
-        </tbody>
-        <?php $i++; ?>
+        <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+            <tbody>
+                <th><?= $i; ?></th>
+                <th>
+                    <a href="">ubah</a> | <a href="">hapus</a>
+                </th>
+                <th><img src="img/<?= $row["gambar"] ?>" width="50px"></th>
+                <th><?= $row["nrp"] ?></th>
+                <th><?= $row["nama"] ?></th>
+                <th><?= $row["email"] ?></th>
+                <th><?= $row["jurusan"] ?></th>
+            </tbody>
+            <?php $i++; ?>
         <?php endwhile; ?>
     </table>
 </body>
+
 </html>
