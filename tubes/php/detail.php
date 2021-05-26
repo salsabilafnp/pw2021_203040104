@@ -1,17 +1,17 @@
 <?php
-//mengecek id_barang, jika tidak ada dikembalikan ke index.php
-if (!isset($_GET['id_barang'])) {
-  header("location: ../index.php");
+//mengecek id, jika tidak ada dikembalikan ke shoe.php
+if (!isset($_GET['id'])) {
+  header("location: ../shoe.php");
   exit;
 }
 
 require 'functions.php';
 
 // Mengambil id dari url
-$id = $_GET['id_barang'];
+$id = $_GET['id'];
 
 // Melakukan Query
-$shoes = query("SELECT * FROM shoes where id_barang = $id");
+$shoes = query("SELECT * FROM cheval where id = $id");
 
 ?>
 
@@ -31,19 +31,16 @@ $shoes = query("SELECT * FROM shoes where id_barang = $id");
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mx-auto">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-main mx-auto">
     <div class="container">
-      <a href="../index.php" class="fw-bold fst-italic align-middle navbar-brand">CHEVAL</a>
+      <a href="../shoe.php" class="fw-bold fst-italic align-middle navbar-brand">CHEVAL</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <a class="nav-item nav-link active page-scroll" href="../php/registrasi.php">
-            <button type="button" class="btn btn-primary"><i class="bi bi-person-plus-fill"></i> Register</button>
-          </a>
-          <a class="nav-item nav-link active page-scroll" href="../php/login.php">
-            <button type="button" class="btn btn-primary"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+          <a class="nav-item nav-link page-scroll" href="php/login.php">
+            <button type="button" class="btn btn-1"><i class="bi bi-box-arrow-in-right"></i> Admin Page</button>
           </a>
         </ul>
       </div>
@@ -51,18 +48,24 @@ $shoes = query("SELECT * FROM shoes where id_barang = $id");
   </nav>
 
   <!-- Database -->
-  <section id="detail" class="detail my-5">
+  <section id="detail" class="detail mt-5">
     <div class="container text-center">
-      <div class="row my-3 justify-content-center">
+      <div class="row mb-2 justify-content-around">
         <div class="col-md-6 pb-3 ">
           <img src="../assets/img/<?= $shoes["picture"]; ?>" width="450">
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title text-uppercase"><?= $shoes["name"]; ?></h5>
-              <p class="card-text"><?= $shoes["description"]; ?></p>
-              <p class="fst-italic"><?= $shoes["price"]; ?></p>
+              <h1 class="display-6 card-title text-uppercase fw-bold"><?= $shoes["name"]; ?></h1>
+              <p class="card-text">Available Colour : <span class="fw-bold"><?= $shoes["color"]; ?></span></p>
+              <?php if ($shoes['stok'] > 0) : ?>
+                <p>This Shoes is <span class="text-danger fw-bold">READY</span></p>
+                <p>There are <span><?= $shoes['stok']; ?> pcs</span></p>
+              <?php elseif ($shoes['stok'] < 1) : ?>
+                <p class="text-danger fw-bold">Out Of Stock</p>
+              <?php endif; ?>
+              <p class="fst-italic fw-bold"><?= $shoes["price"]; ?></p>
               <p class="text-muted"><?= $shoes["category"]; ?></p>
               <a href="" class="btn btn-primary"><i class="bi bi-cart"></i> Add to Cart</a>
             </div>
@@ -70,7 +73,7 @@ $shoes = query("SELECT * FROM shoes where id_barang = $id");
         </div>
       </div>
 
-      <a class="btn btn-outline-secondary" href="../index.php">Back to The List</a>
+      <a class="btn btn-outline-secondary my-3" href="../shoe.php">Back to The List</a>
     </div>
   </section>
 

@@ -37,28 +37,33 @@ if (isset($_POST["tambah"])) {
   <title>Cheval's - Add Item</title>
 </head>
 
-<body>
+<body class="bg-main">
 
   <!-- Add -->
-  <div class="add container my-5">
+  <div class="container my-5">
     <div class="row justify-content-center">
       <div class="card col-sm-10 col-md-8">
         <div class="card-body">
           <h4 class="card-title text-center">Add Item on Chevals</h4>
           <form action="" method="POST" enctype="multipart/form-data">
-            <div class="mb-1">
+            <div class="mb-2">
               <label for="name" class="col-form-label">Name</label>
               <input type="text" name="name" class="form-control" placeholder="Write Name of Item" required autofocus>
             </div>
-            <div class="mb-1">
-              <label for="description" class="col-form-label">Description</label>
-              <textarea type="description" name="description" class="form-control" placeholder="Write Name of Item" required></textarea>
+            <div class="mb-2">
+              <label for="color" class="col-form-label">Color</label>
+              <textarea type="color" name="color" class="form-control" placeholder="Write The Available Color of Item" required></textarea>
             </div>
-            <div class="mb-1">
+            <div class="mb-2">
+              <label for="stok" class="col-form-label">Stock of Item</label>
+              <input type="text" type="stok" name="stok" class="form-control" placeholder="How Many Items are Available?" required>
+              <p class="ms-2 text-muted">Write in numbers</p>
+            </div>
+            <div class="mb-2">
               <label for="price" class="col-form-label">Price</label>
               <input type="text" type="price" name="price" class="form-control" placeholder="Write The Price of Item" required>
             </div>
-            <div class="mb-1">
+            <div class="mb-2">
               <label for="picture" class="col-form-label">Picture</label>
               <input type="file" name="picture" class="form-control picture" placeholder="Write Picture Name of Item" onchange="previewImage()">
               <img src="../assets/img/blank.png" width="150" class="mt-3 d-block img-preview">

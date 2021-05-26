@@ -72,11 +72,11 @@ if (isset($_POST['submit'])) {
   <title>Login</title>
 </head>
 
-<body>
+<body class="bg-main">
   <!-- Login -->
   <section id="login">
     <div class="container">
-      <div class="row justify-content-center">
+      <div class="row my-5 justify-content-center">
         <div class="card col-sm-8 col-md-4">
           <div class="card-body">
             <h4 class="card-title text-center">Login</h4>
@@ -86,7 +86,7 @@ if (isset($_POST['submit'])) {
               <?php endif; ?>
               <div class="mb-3">
                 <label for="username" class="col-form-label">Username</label>
-                <input type="text" class="form-control" name="username" placeholder="Write Your Username">
+                <input type="text" class="form-control" name="username" placeholder="Write Your Username" autofocus>
               </div>
               <div class="mb-3">
                 <label for="password" class="col-form-label">Password</label>

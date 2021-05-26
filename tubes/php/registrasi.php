@@ -29,11 +29,11 @@ if (isset($_POST['register'])) {
   <title>Registrasi</title>
 </head>
 
-<body>
+<body class="bg-main">
 
   <!-- Registrasi -->
   <section id="registrasi">
-    <div class="container">
+    <div class="container my-5">
       <div class="row justify-content-center">
         <div class="card col-sm-8 col-md-4">
           <div class="card-body">

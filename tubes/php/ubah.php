@@ -6,17 +6,17 @@ if (!isset($_SESSION["username"])) {
   exit;
 }
 
-require 'functions.php';
-
 // jika tidak ada id di url
-if (!isset($_GET['id_barang'])) {
-  header("Location: ../admin.php");
+if (!isset($_GET['id'])) {
+  header("Location: admin.php");
   exit;
 }
 
-$id_barang = $_GET["id_barang"];
+require 'functions.php';
 
-$shoes = query("SELECT * FROM shoes WHERE id_barang = $id_barang");
+$id = $_GET['id'];
+
+$shoes = query("SELECT * FROM cheval WHERE id = $id");
 
 if (isset($_POST['ubah'])) {
   if (ubah($_POST) > 0) {
@@ -47,29 +47,34 @@ if (isset($_POST['ubah'])) {
   <title>Cheval's - Edit Item</title>
 </head>
 
-<body>
+<body class="bg-main">
 
   <!-- Edit -->
-  <div class="edit container my-sm-4 my-md-5">
+  <div class="container my-5">
     <div class="row justify-content-center">
       <div class="card col-sm-10 col-md-8">
         <div class="card-body">
           <h4 class="card-title text-center">Edit Item on Chevals</h4>
           <form action="" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="id_barang" value="<?= $shoes['id_barang']; ?>">
-            <div class="mb-1">
+            <input type="hidden" name="id" value="<?= $shoes['id']; ?>">
+            <div class="mb-2">
               <label for="name" class="col-form-label">Name</label>
               <input type="text" name="name" class="form-control" placeholder="Write Name of Item" required autofocus value="<?= $shoes['name']; ?>">
             </div>
-            <div class="mb-1">
-              <label for="description" class="col-form-label">Description</label>
-              <textarea type="description" name="description" class="form-control" placeholder="Write Name of Item" required><?= $shoes['description']; ?></textarea>
+            <div class="mb-2">
+              <label for="color" class="col-form-label">Color</label>
+              <textarea type="color" name="color" class="form-control" placeholder="Write The Available Color of Item" required><?= $shoes['color']; ?></textarea>
             </div>
-            <div class="mb-1">
+            <div class="mb-2">
+              <label for="stok" class="col-form-label">Stock of Item</label>
+              <input type="text" type="stok" name="stok" class="form-control" placeholder="How Many Items are Available?" required value="<?= $shoes['stok']; ?>">
+              <p class="ms-2 text-muted">Write in numbers</p>
+            </div>
+            <div class="mb-2">
               <label for="price" class="col-form-label">Price</label>
               <input type="text" type="price" name="price" class="form-control" placeholder="Write The Price of Item" required value="<?= $shoes['price']; ?>">
             </div>
-            <div class="mb-1">
+            <div class="mb-2">
               <input type="hidden" name="picture_old" value="<?= $shoes['picture']; ?>">
               <label for="picture" class="col-form-label">Picture</label>
               <input type="file" name="picture" class="form-control picture" placeholder="Write Picture Name of Item" onchange="previewImage()">
