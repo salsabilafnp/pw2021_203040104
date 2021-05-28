@@ -53,13 +53,12 @@ if (isset($_POST['cari'])) {
     </div>
 
     <div class="data">
-      <!-- Tampilan Pencarian -->
-      <?php if (empty($shoes)) : ?>
-        <h2 class="my-3 fst-italic text-danger">Data tidak ditemukan</h2>
-      <?php endif; ?>
-
       <!-- List of data -->
       <div class="row mt-5 justify-content-center">
+        <!-- Tampilan Pencarian -->
+        <?php if (empty($shoes)) : ?>
+          <h2 class="my-3 fst-italic text-danger">Data tidak ditemukan</h2>
+        <?php endif; ?>
         <?php foreach ($shoes as $shoe) : ?>
           <div class="col-sm-5 col-md-3">
             <div class="card text-center mb-3">
